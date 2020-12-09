@@ -74,7 +74,7 @@
 
                 </p>
                 <p class="parrafo">
-                   Rellenar con mas info :v
+                   Para mas informacion escribenos
                 </p>
             </div>
         </section>
