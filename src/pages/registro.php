@@ -63,6 +63,8 @@
                     $mail= @mail($correo,$asunto,$msg,$header);
                     if($mail){
                         echo"<h4> mensaje enviado</h4>";
+                    }else{
+                        echo"<h4> error en mensaje</h4>";
                     }
                     ?>
                     
