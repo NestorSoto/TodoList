@@ -17,9 +17,20 @@
         //mail($correo,$asunto,$msg,$header);
         //print_r($mail);
         if(mail($correo,$asunto,$msg,$header)){
-            echo"<h4>enviado</h4>";
+
+            include("registro.html")
+                    ?>
+                    
+                    <h1 class="error-registro"> enviado</h1>
+                   
+                    <?php
         }else{
-            echo"<h4>error</h4>";
+            include("registro.html")
+                    ?>
+                    
+                    <h1 class="error-registro"> error enviar </h1>
+                   
+                    <?php
         }
 
 
