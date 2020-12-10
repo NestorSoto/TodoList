@@ -10,15 +10,12 @@
 
             if($contrasena == $contra_repe){
                 $header="From: suport@todolist.com"."\r\n";
-                $asunto="Verificaion";
+                $asunto="Verificaion de cuenta";
                 $header.="reply-To: suport@todolist.com"."\r\n";
                 $header.="X.Mailer: PHP/". phpversion();
                 $msg="Usted se ha registrado en Todo List. "."\r\n";
                 $msg="Si usted no realizó la operacion, contactese con nosotros. ";
-                $mail= @mail($correo,$asunto,$msg,$header);
-                if(mail){
-                    console.log("correo enviado");
-                }
+                $mail= mail($correo,$asunto,$msg,$header);
 
 
 
