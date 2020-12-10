@@ -1,5 +1,6 @@
 <?php
     include("conexion.php");
+    include("validar.php");
     //Registrar usuario
     if(isset($_POST["registrar"])){
         try{                        
@@ -10,13 +11,7 @@
            
 
             if($contrasena == $contra_repe){
-                $header="From: suport@todolist.com"."\r\n";
-                $asunto="Verificaion de cuenta";
-                $header.="reply-To: suport@todolist.com"."\r\n";
-                $header.="X.Mailer: PHP/". phpversion();
-                $msg="Usted se ha registrado en Todo List. "."\r\n";
-                $msg="Si usted no realizó la operacion, contactese con nosotros. ";
-                $mail= mail($correo,$asunto,$msg,$header);
+               
 
 
 
@@ -53,19 +48,7 @@
                    
                 }else {
                     $resultado_user = null;
-                    include("registro.html");
-                    $header="From: suport@todolist.com"."\r\n";
-                    $asunto="Verificaion de cuenta";
-                    $header.="reply-To: suport@todolist.com"."\r\n";
-                    $header.="X.Mailer: PHP/". phpversion();
-                    $msg="Usted se ha registrado en Todo List. "."\r\n";
-                    $msg="Si usted no realizó la operacion, contactese con nosotros. ";
-                    $mail= @mail($correo,$asunto,$msg,$header);
-                    if($mail){
-                        echo"<h4> mensaje enviado</h4>";
-                    }else{
-                        echo"<h4> error en mensaje</h4>";
-                    }
+                    include("registro.html")
                     ?>
                     
                     <h1 class="error-registro"> YA EXISTE UNA CUENTA CON ESE CORREO O CON ESE NOMBRE DE USUARIO</h1>                    
