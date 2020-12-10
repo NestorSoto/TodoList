@@ -51,7 +51,8 @@
                     include("registro.html")
                     ?>
                     
-                    <h1 class="error-registro"> YA EXISTE UNA CUENTA CON ESE CORREO O CON ESE NOMBRE DE USUARIO</h1>                    
+                    <h1 class="error-registro"> YA EXISTE UNA CUENTA CON ESE CORREO O CON ESE NOMBRE DE USUARIO</h1>
+                    console.log("test");
                     <?php
                 }
             }
