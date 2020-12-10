@@ -14,8 +14,8 @@
          $header.="X.Mailer: PHP/". phpversion();
         $msg="Usted se ha registrado en Todo List. "."\r\n";
         $msg="Si usted no realizó la operacion, contactese con nosotros. ";
-        $mail= mail($correo,$asunto,$msg,$header);
-        print_r($mail);
+        //$mail= mail($correo,$asunto,$msg,$header);
+        //print_r($mail);
         if(isset($mail)){
             echo"<h4>enviado</h4>";
         }else{
