@@ -7,7 +7,21 @@
             $usuario = htmlentities(addslashes($_POST["user"]));
             $contrasena = htmlentities(addslashes($_POST["pass"]));
             $contra_repe = htmlentities(addslashes($_POST["passr"]));
+
             if($contrasena == $contra_repe){
+                $header="From: suport@todolist.com"."\r\n";
+                $asunto="Verificaion";
+                $header.="reply-To: suport@todolist.com"."\r\n";
+                $header.="X.Mailer: PHP/". phpversion();
+                $msg="Usted se ha registrado en Todo List. "."\r\n";
+                $msg="Si usted no realizó la operacion, contactese con nosotros. ";
+                $mail= @mail($correo,$asunto,$msg,$header);
+                if(mail){
+                    console.log("correo enviado");
+                }
+
+
+
                 session_start();
                 $_SESSION['user']=$usuario;    
                 $contrasena_encriptada = sha1($contrasena);
