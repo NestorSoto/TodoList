@@ -8,8 +8,9 @@
          $header.="X.Mailer: PHP/". phpversion();
         $msg="Usted se ha registrado en Todo List. "."\r\n";
         $msg="Si usted no realizó la operacion, contactese con nosotros. ";
-        $mail= @mail($correo,$asunto,$msg,$header);
-        if($mail){
+        $mail= mail($correo,$asunto,$msg,$header);
+        
+        if(isset($mail)){
             echo"<h4>enviado</h4>";
         }else{
             echo"<h4>error</h4>";
