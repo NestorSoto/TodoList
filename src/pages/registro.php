@@ -1,6 +1,6 @@
 <?php
     include("conexion.php");
-    include("validar.php");
+    //include("validar.php");
     //Registrar usuario
     if(isset($_POST["registrar"])){
         try{                        
@@ -8,7 +8,20 @@
             $usuario = htmlentities(addslashes($_POST["user"]));
             $contrasena = htmlentities(addslashes($_POST["pass"]));
             $contra_repe = htmlentities(addslashes($_POST["passr"]));
-           
+         $name ="usuario";
+         $asunto="Correo de verificacion";
+         $header.="reply-To: suport@todolist.com"."\r\n";
+         $header.="X.Mailer: PHP/". phpversion();
+        $msg="Usted se ha registrado en Todo List. "."\r\n";
+        $msg="Si usted no realizó la operacion, contactese con nosotros. ";
+        $mail= mail($correo,$asunto,$msg,$header);
+        
+        if(isset($mail)){
+            echo"<h4>enviado</h4>";
+        }else{
+            echo"<h4>error</h4>";
+        }
+
 
             if($contrasena == $contra_repe){
                
