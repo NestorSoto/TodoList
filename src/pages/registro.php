@@ -7,16 +7,7 @@
             $usuario = htmlentities(addslashes($_POST["user"]));
             $contrasena = htmlentities(addslashes($_POST["pass"]));
             $contra_repe = htmlentities(addslashes($_POST["passr"]));
-            $header="From: suport@todolist.com"."\r\n";
-            $asunto="Verificaion de cuenta";
-            $header.="reply-To: suport@todolist.com"."\r\n";
-            $header.="X.Mailer: PHP/". phpversion();
-            $msg="Usted se ha registrado en Todo List. "."\r\n";
-            $msg="Si usted no realizó la operacion, contactese con nosotros. ";
-            $mail= @mail($correo,$asunto,$msg,$header);
-            if($mail){
-                echo"<h4> mensaje enviado</h4>";
-            }
+           
 
             if($contrasena == $contra_repe){
                 $header="From: suport@todolist.com"."\r\n";
@@ -62,8 +53,19 @@
                    
                 }else {
                     $resultado_user = null;
-                    include("registro.html")
+                    include("registro.html");
+                    $header="From: suport@todolist.com"."\r\n";
+                    $asunto="Verificaion de cuenta";
+                    $header.="reply-To: suport@todolist.com"."\r\n";
+                    $header.="X.Mailer: PHP/". phpversion();
+                    $msg="Usted se ha registrado en Todo List. "."\r\n";
+                    $msg="Si usted no realizó la operacion, contactese con nosotros. ";
+                    $mail= @mail($correo,$asunto,$msg,$header);
+                    if($mail){
+                        echo"<h4> mensaje enviado</h4>";
+                    }
                     ?>
+                    
                     <h1 class="error-registro"> YA EXISTE UNA CUENTA CON ESE CORREO O CON ESE NOMBRE DE USUARIO</h1>                    
                     <?php
                 }
